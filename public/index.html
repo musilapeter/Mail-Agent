@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Email Agent - Monitors your Gmail and replies using Google Gemini">
+  <title>Email Agent — AI Inbox Assistant</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1><span class="icon">🤖</span> Email Agent</h1>
+        <p>Powered by Gemini AI</p>
+      </div>
+      <nav class="nav-items">
+        <div class="nav-item active" data-page="dashboard">
+          <span class="icon">📊</span> Dashboard
+        </div>
+        <div class="nav-item" data-page="drafts">
+          <span class="icon">📝</span> Draft Queue
+          <span class="nav-badge" id="draft-badge" style="display:none">0</span>
+        </div>
+        <div class="nav-item" data-page="emails">
+          <span class="icon">📬</span> Email History
+        </div>
+        <div class="nav-item" data-page="rules">
+          <span class="icon">⚡</span> Auto-Reply Rules
+        </div>
+        <div class="nav-item" data-page="settings">
+          <span class="icon">⚙️</span> Settings
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="connection-pill">
+          <span class="status-dot" id="status-dot"></span>
+          <div class="connection-info">
+            <div class="label">Connection</div>
+            <div class="email" id="sidebar-email">Not connected</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <div class="topbar">
+        <h2 id="page-title">Dashboard</h2>
+        <div class="topbar-actions" id="topbar-actions"></div>
+      </div>
+      <div class="content" id="content"></div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal-content"></div>
+  </div>
+
+  <!-- Toasts -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
